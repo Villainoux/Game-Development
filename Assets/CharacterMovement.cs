@@ -7,6 +7,11 @@ public class CharacterMovement : MonoBehaviour
     private CharacterController characterController;
 
     public float Speed = 5f;
+
+    public float _gravity = -9.81f;
+    [SerializeField] private float gravityMultiplier = 3.0f;
+    private float _velocity;
+
     // Start is called before the first frame update
     void Start()
     {
