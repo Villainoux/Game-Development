@@ -5,10 +5,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    public float dodge;
+
+    public KeyCode keyToDisable = KeyCode.Space;
+    public float disableTime; // The time in seconds to disable the key
+    private bool isKeyDisabled = false;
+    private float disableTimer = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,5 +27,29 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
 
         transform.Translate(movementDirection * speed * Time.deltaTime);
+
+        if (isKeyDisabled)
+        {
+            // Key is disabled, count down the timer
+            disableTimer -= Time.deltaTime;
+
+            // If the timer reaches 0 or less, re-enable the key
+            if (disableTimer <= 0)
+            {
+                isKeyDisabled = false;
+            }
+        }
+        else
+        {
+            // Key is not disabled, check if the key is pressed
+            if (Input.GetKeyDown(keyToDisable))
+            {
+                // Key is pressed, disable it
+                transform.Translate(movementDirection * dodge);
+                Debug.Log(Time.deltaTime);
+                isKeyDisabled = true;
+                disableTimer = disableTime;
+            }
+        }
     }
 }
