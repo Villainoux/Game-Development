@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float disableTime; // The time in seconds to disable the key
     private bool isKeyDisabled = false;
     private float disableTimer = 0.0f;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
