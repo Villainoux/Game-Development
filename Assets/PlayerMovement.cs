@@ -46,9 +46,10 @@ public class PlayerMovement : MonoBehaviour
             // Key is not disabled, check if the key is pressed
             if (Input.GetKeyDown(keyToDisable))
             {
-                // Key is pressed, disable it
-                transform.Translate(movementDirection * dodge);
-                Debug.Log(Time.deltaTime);
+                GetComponent<Rigidbody>().AddForce(movementDirection * dodge, ForceMode.VelocityChange);
+
+                // Key is pressed, disable it 
+
                 isKeyDisabled = true;
                 disableTimer = disableTime;
             }

@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  dodge: 5
+  dodge: 10
   keyToDisable: 32
   disableTime: 3
 --- !u!54 &1515109745
