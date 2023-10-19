@@ -17,11 +17,12 @@ public class ObjectSelector : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, selectableObjectsLayer))
             {
                 Transform selectedObject = hit.transform;
-                cameraController.SetTarget(selectedObject);
-            }
-            else {
-               
 
+                // Check if the selected object has the "Untargetable" tag.
+                if (!selectedObject.CompareTag("Untargetable"))
+                {
+                    cameraController.SetTarget(selectedObject);
+                }
             }
         }
         if (Input.GetMouseButtonDown(1)) // Assuming right mouse button click to clear the target.

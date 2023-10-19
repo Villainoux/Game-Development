@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - Untargetable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Untargetable
   - Water
   - UI
   - 
