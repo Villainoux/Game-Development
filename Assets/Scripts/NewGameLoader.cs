@@ -5,8 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class NewGameLoader : MonoBehaviour
 {
+    public Animator transition;
+    public float transitionTime = 1f;
     public void GoNextScene() 
     {
-        SceneManager.LoadScene("Tutorial Level");
+        StartCoroutine(LoadLevel("Tutorial Level"));
+    }
+
+    IEnumerator LoadLevel(string LevelName)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+        
+        SceneManager.LoadScene(LevelName);
     }
 }
