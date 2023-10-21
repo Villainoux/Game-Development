@@ -2316,7 +2316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1676619241}
-  transitionTime: 1
+  transitionTime: 0
 --- !u!4 &1810642725
 Transform:
   m_ObjectHideFlags: 0
@@ -3008,6 +3008,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6017642712208640626, guid: 6e49958232aa9dd4191c65a2273d2236, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680480764425485298, guid: 6e49958232aa9dd4191c65a2273d2236, type: 3}
+      propertyPath: transitionTime
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
