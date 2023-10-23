@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 
 
-public class DraggableImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler,
+public class DraggableImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Vector3 originalPosition;
     private RectTransform myTransform;
@@ -45,3 +45,4 @@ public class DraggableImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
 
 }
+
