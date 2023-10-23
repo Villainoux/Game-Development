@@ -1,41 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100; // Maximum health points.
-    public int currentHealth; // Current health points.
+  
 
-    // This function is called when the object is created.
-    void Start()
+
+    public int maxHealth = 100; // Maximum health of the object
+    public int currentHealth; // Current health of the object
+
+    public Healthbar healthbar;
+
+    public void Start()
     {
-        currentHealth = maxHealth; // Initialize the health to the maximum value.
+        currentHealth = maxHealth; // Set the initial health to the maximum health when the object is created
+        healthbar.SetMaxHealth(maxHealth);
+    }
+    void Update()
+    {
+       
+    
+
+    
     }
 
-    // Function to decrease the health by a specified amount.
-    public void TakeDamage(int damageAmount)
+    // Function to apply damage to the object
+    public void TakeDamage(int damage)
     {
-        currentHealth -= damageAmount;
-
-        // Check if the health has dropped to or below zero.
+        currentHealth -= damage;
+        healthbar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            Die(); // Call a function to handle the object's death.
+            Die();
         }
     }
 
-    // Function to increase the health by a specified amount.
-    public void Heal(int healAmount)
+    // Function to handle the death of the object
+    private void Die()
     {
-        currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
-    }
-
-    // Function to handle the object's death.
-    void Die()
-    {
-        // You can put your death logic here, such as destroying the object.
+        // You can implement death behavior here, such as playing an animation, spawning effects, or destroying the object.
         Destroy(gameObject);
     }
+
+
 }
 

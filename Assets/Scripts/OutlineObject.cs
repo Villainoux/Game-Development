@@ -91,6 +91,5 @@ public class OutlineInteraction : MonoBehaviour
             selection.gameObject.GetComponent<Outline>().enabled = false;
             selection = null;
         }
-      
     }
 }
